@@ -6,10 +6,10 @@ app.use(body_parser.urlencoded({extended: false}))
 app.use(body_parser.json())
 
 const port = process.env.PORT || 8000 
-/*const routes = require("./app/Routes/routes")
+const routes = require("./app/Routes/routes")
 routes(app)
 
-const db = require("./app/Config/db")
+/*const db = require("./app/Config/db")
 db.InitiateMongoServer()*/
 
 app.listen(port, () => {
