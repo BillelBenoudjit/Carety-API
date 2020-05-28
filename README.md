@@ -1,15 +1,14 @@
-# CSE New Website
+# Carety API
 
 ## Requirements 
 | Requirement                                 |
 | ------------------------------------------- |
 | [NODE](https://nodejs.org/en/download/) |
-| [NPM] Included with Node.js Installation |
 
 
 ## Deploy locally 
 
-1 - Clone:
+1 - Clone.
 
 2 - Install the necessary dependencies:
 ```bash
