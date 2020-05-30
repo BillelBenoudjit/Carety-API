@@ -1,5 +1,4 @@
 const Objective = require('../Models/objective.model')
-const { check, validationResult } = require("express-validator")
 
 exports.addObjective = async (req, res) => {
     try {

@@ -1,5 +1,4 @@
 const Post = require('../Models/post.model')
-const { check, validationResult } = require("express-validator")
 
 exports.addPost = async (req, res) => {
     try {

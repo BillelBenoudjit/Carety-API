@@ -1,4 +1,3 @@
-const { check, validationResult } = require("express-validator/check")
 const userController = require("../Controllers/user.controller")
 const objectiveController = require("../Controllers/objective.controller")
 const postController = require("../Controllers/post.controller")
