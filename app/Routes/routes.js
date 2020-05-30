@@ -1,5 +1,6 @@
 const { check, validationResult } = require("express-validator/check")
 const userController = require("../Controllers/user.controller")
+const auth = require("../Middleware/auth")
 
 module.exports = (app) => {
     app.get("/", (req, res) => {
@@ -8,5 +9,7 @@ module.exports = (app) => {
     //User routes
     app.post("/signup", userController.signup)
     app.post("/login", userController.login)
-    app.get("/users/rank", userController.getRankedUsers)
+    app.put("/users/views", auth, userController.editUserViews)
+    app.get("/users/rank", auth, userController.getRankedUsers)
+    app.get("/users/profile", auth, userController.getUserProfile)
 }
