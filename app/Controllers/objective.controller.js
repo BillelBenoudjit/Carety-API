@@ -43,13 +43,13 @@ exports.editObjectiveviews = async (req, res) => {
         if (!objective.achieved) {
             try {
                 if (objective.views + req.body.numberViews == objective.necessaryViews) {
-                    objective.views = objective.views + req.body.numberViews
+                    objective.views = objective.views + parseInt(req.body.numberViews)
                     objective.achieved = true
                 } else  if (objective.views + req.body.numberViews > objective.necessaryViews) {
                     objective.views = objective.necessaryViews
                     objective.achieved = true
                 } else {
-                    objective.views = objective.views + req.body.numberViews
+                    objective.views = objective.views + parseInt(req.body.numberViews)
                 }
                 await objective.save()
                 return res.status(200).json({
