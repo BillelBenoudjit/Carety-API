@@ -1,6 +1,7 @@
 const { check, validationResult } = require("express-validator/check")
 const userController = require("../Controllers/user.controller")
 const objectiveController = require("../Controllers/objective.controller")
+const postController = require("../Controllers/post.controller")
 const auth = require("../Middleware/auth")
 
 module.exports = (app) => {
@@ -21,5 +22,9 @@ module.exports = (app) => {
     app.get("/objectives/nearToreachObjectives", objectiveController.getNearToReachObjective)
     app.get("/objectives/importantObjectives", objectiveController.getImportantObjectives)
     app.get("/objectives/countryObjectives/:country", objectiveController.getCountryObjectives)
-    
+    //Ads routes
+    app.post("/ads/add", postController.addPost)
+    app.get("/ads", postController.getPosts)
+    app.put("/ads/edit/:id", postController.editPostViews)
+    app.delete("/ads/delete/:id", postController.deletePost)
 }
