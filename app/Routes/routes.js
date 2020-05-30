@@ -8,4 +8,5 @@ module.exports = (app) => {
     //User routes
     app.post("/signup", userController.signup)
     app.post("/login", userController.login)
+    app.get("/users/rank", userController.getRankedUsers)
 }

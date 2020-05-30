@@ -82,3 +82,26 @@ exports.login = async (req, res) => {
         })
     }
 }
+
+exports.getRankedUsers = async (req, res) => {
+    try {
+        let users = await User.find({})
+        users.sort(compare)
+        return res.send(users)
+    } catch (err) {
+        console.error(e)
+        return res.status(500).json({
+            message: "Server Error"
+        })
+    }
+}
+
+compare = (user1, user2) => {
+    let comparaison = 0
+    if (user1.points > user2.points) {
+        comparaison = 1
+    } else if (user1.points < user2.points) {
+        comparaison = -1
+    }
+    return comparaison * -1
+}
