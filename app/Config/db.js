@@ -3,7 +3,7 @@
 const mongoose = require("mongoose")
 const {dbUsername, dbPassword, dbName} = require("../Config/config")
 
-const dbConnectionUrl = ``
+const dbConnectionUrl = `mongodb+srv://${dbUsername}:${dbPassword}@billel-ap34a.mongodb.net/${dbName}?retryWrites=true&w=majority`
 
 exports.InitiateMongoServer = async () => {
     try {
